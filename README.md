@@ -15,6 +15,7 @@ Datenbank:
 8. exit
   
 Python:
+0. python3 -m pip install --upgrade pip
 1. pip install -r requirements.txt
 2. requirements.txt installieren mit pip install -r requirements.txt
 3. pip3 install -r requirements.txt

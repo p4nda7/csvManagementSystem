@@ -15,12 +15,12 @@ Datenbank:
 8. exit
   
 Python:
-0. python3 -m pip install --upgrade pip
+
+1. python3 -m venv path/to/venv
+2. source path/to/venv/bin/activate
+3. python3 -m pip install xyz
+4. python3 -m pip install --upgrade pip
 1. pip install -r requirements.txt
-2. requirements.txt installieren mit pip install -r requirements.txt
-3. pip3 install -r requirements.txt
-4. python3 -m venv myenv
-5. source myenv/bin/activate
   
 
 <b>Anwendung starten (test.py)</b>

@@ -1,4 +1,5 @@
 # Installation auf Mac:
+#Hallo
 # python3 -m pip install streamlit pandas sqlalchemy psycopg2-binary
 
 # System-Abhängigkeiten (via Homebrew)

@@ -75,7 +75,6 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```bash
     python3 -m venv path/to/venv
     source path/to/venv/bin/activate
-    python3 -m pip install xyz
     pip install --upgrade pip
    
    ```

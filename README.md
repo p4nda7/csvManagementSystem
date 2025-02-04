@@ -2,6 +2,8 @@
 
 Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellten CSV Daten, die in einer PostgreSQL-Datenbank gespeichert sind. Sie besteht aus einer Weboberfläche (`index.html`), einem Backend-Skript zur Datenabfrage (`getData.php`), und einem Streamlit-basierten Python-Skript (`test.py`) zur Datenverarbeitung und -visualisierung.
 
+   ![Screenshot](assets/screenshots/1_vorschau.png)
+
 ## Vorbedingungen
 
 ### Systemvoraussetzungen
@@ -95,11 +97,13 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 1. Klicken Sie auf den Tab #Upload
 2. Klicken Sie auf den Button "Browse Files"
-![Screenshot](assets/screenshots/1_csv upload.png)
-![Screenshot](assets/screenshots/1_csv upload.png)
+   ![Screenshot](assets/screenshots/2_csv_upload.png)
+
 
 4. Laden Sie die bereitgestellte Datei aus und bestätigen Sie mit "'Dateiname' übertragen'"
-![Screenshot](assets/screenshots/2.1_csv übertragen.png)
+
+   ![Screenshot](assets/screenshots/2.1_csv_übertragen.png)
+
 
 ### 2. Datenbank-Management
 - Anzeige aller vorhandenen Tabellen

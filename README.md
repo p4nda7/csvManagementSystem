@@ -4,7 +4,7 @@ Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellt
 
    ![Screenshot](assets/screenshots/1_vorschau.png)
    
-   ![Screenshot](assets/screenshots/1.1_vorschau)
+   ![Screenshot](assets/screenshots/1.1_vorschau.png)
 
 ## Vorbedingungen
 

@@ -3,6 +3,7 @@
 Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellten CSV Daten, die in einer PostgreSQL-Datenbank gespeichert sind. Sie besteht aus einer Weboberfläche (`index.html`), einem Backend-Skript zur Datenabfrage (`getData.php`), und einem Streamlit-basierten Python-Skript (`test.py`) zur Datenverarbeitung und -visualisierung.
 
    ![Screenshot](assets/screenshots/1_vorschau.png)
+    ![Screenshot](assets/screenshots/1.1_vorschau.png)
 
 ## Vorbedingungen
 

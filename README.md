@@ -40,17 +40,6 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    pip install --upgrade pip
    ```
 
-6. **Virtuelle Umgebung erstellen**  
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-7. **requirements.txt installieren**  
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ### Datenbank einrichten
 
 1. Starten Sie den PostgreSQL-Dienst:

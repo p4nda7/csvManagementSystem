@@ -6,7 +6,7 @@ Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellt
 
 ### Systemvoraussetzungen
 
-- macOS oder Linux (für Windows können die Schritte leicht abweichen)
+- macOS (für Windows und Linux können die Schritte leicht abweichen)
 - Terminalzugriff
 - Internetverbindung
 

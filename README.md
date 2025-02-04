@@ -94,6 +94,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 3. Geben Sie im Eingabefeld den Namen der Tabelle ein
 2. Klicken Sie auf den Button "Tabelle erstellen"
 5. Wiederholen Sie diesen Vorgang 6 mal
+   
 ![Screenshot](assets/screenshots/2_csv_upload.png)
 
 ### 2. Tabelle Löschen
@@ -104,12 +105,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 5. Bestätigen Sie mit dem Button "Bestätigen"
 6. Prüfen Sie ob ein grünes PopUp Fenster erscheint
 
+![Screenshot](assets/screenshots/4_tabelleLöschen.png)
+
 ### 3. Tabellen wechseln
 0. Vorbedingung:
       - Die Tabellenverwaltung ist ausgeklappt
       - Es sind mehrere Tabellen angelegt
 1. Wählen sie unter "Vorhandene Tabellen" in der Sidebar die gewünschte Tabelle aus
 
+![Screenshot](assets/screenshots/5_tabelleWechseln.png)
 
 
 ### 4. CSV-Datei Import
@@ -136,6 +140,9 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 2. Klicken Sie auf den Tab "View Data"
 3. Prüfen Sie ob Datensätze geladen sind
 
+![Screenshot](assets/screenshots/6_viewData.png)
+
+
 ### 6. Datenvisualisierung
 0. Vorbedingung:
    - Es sind Tabellen angelegt
@@ -144,6 +151,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    - Es wurde das korrekte Start und Enddatum ausgewählt
 2. Klicken Sie auf den Tab "Diagram Multi"
 3. Prüfen Sie ob Datensätze geladen sind
+
+![Screenshot](assets/screenshots/7_datavisualization.png)
 
 ### 7. Datenvisualisierung mit Graphmanipulationen
 0. Vorbedingung:
@@ -154,6 +163,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 2. Öffnen Sie den Tab "Visualisierungsoptionen"
 3. Prüfen Sie die Registeroptionen "Grundeinstellungen", "Statistische Anzeigen", "Erweiterte Analysen "sich öffnen
 
+![Screenshot](assets/screenshots/8_datamanipulation.png)
 
 ### 8. Performance-Optimierung
 - Connection Pooling für effiziente Datenbankverbindungen

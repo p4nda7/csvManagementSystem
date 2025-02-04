@@ -34,12 +34,6 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    brew install php
    ```
 
-5. **pip installieren**  
-   ```bash
-   brew install python-pip
-   pip install --upgrade pip
-   ```
-
 ### Datenbank einrichten
 
 1. Starten Sie den PostgreSQL-Dienst:

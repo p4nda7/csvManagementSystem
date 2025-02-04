@@ -10,11 +10,6 @@ Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellt
 - Terminalzugriff
 - Internetverbindung
 
-# Projektübersicht
-
-Hier ist ein Screenshot der Anwendung:
-
-![Screenshot](assets/screenshots/Bildschirmfoto%202025-02-04%20um%2013.40.44.png)
 
 ### Software installieren
 
@@ -96,6 +91,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 - Automatische Erkennung des Dateinamens als Tabellenname
 - Vorschau der Daten vor dem Import
 - Anpassbare Chunk-Größe für optimierte Performance
+
+
+1. Klicken Sie auf den Tab #Upload
+2. Klicken Sie auf den Button "Browse Files"
+![Screenshot](assets/screenshots/Bildschirmfoto%202025-02-04%20um%2013.40.44.png)
+![Screenshot](assets/screenshots/Bildschirmfoto%202025-02-04%20um%2013.40.44.png)
+
+4. Laden Sie die bereitgestellte Datei aus und bestätigen Sie mit "'Dateiname' übertragen'"
+![Screenshot](assets/screenshots/Bildschirmfoto%202025-02-04%20um%2013.40.44.png)
 
 ### 2. Datenbank-Management
 - Anzeige aller vorhandenen Tabellen

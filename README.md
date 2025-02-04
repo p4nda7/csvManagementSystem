@@ -50,7 +50,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 2. Der Username/admin ist "postgres"
 3. Vergeben Sie das Userpasswort "123456"
 4. Öffnen Sie den Terminal
-5. Führen Sie den Befehl aus:
+5. Verbinden Sie sich mit der Datenbank
    ```bash
    psql -U postgres
    ```

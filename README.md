@@ -71,10 +71,16 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```bash
    cd /path/to/csvManagementSystemv2
    ```
-2. Aktivieren Sie die virtuelle Umgebung:
+2. Erstellen und Aktivieren Sie die virtuelle Umgebung:
    ```bash
+   python3 -m venv venv
    source venv/bin/activate
    ```
+3. Installieren Sie die Bibliotheken:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 3. Starten Sie die Anwendung:
    ```bash
    python3 -m streamlit run test.py

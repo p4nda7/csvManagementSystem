@@ -10,6 +10,12 @@ Diese Anwendung ermöglicht die Visualisierung und Verwaltung von bereitgestellt
 - Terminalzugriff
 - Internetverbindung
 
+# Projektübersicht
+
+Hier ist ein Screenshot der Anwendung:
+
+![Screenshot](assets/screenshots/Bildschirmfoto%202025-02-04%20um%2013.40.44.png)
+
 ### Software installieren
 
 Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekomponenten zu installieren:

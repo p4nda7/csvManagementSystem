@@ -57,6 +57,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```bash
    brew services start postgresql
    ```
+   Führen Sie alternativ dein Installations- und Einrichtungsprozess durch
 
 2. Der Username ist "postgres"
 3. Das Standardpasswort ist "123456"

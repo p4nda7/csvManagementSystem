@@ -45,19 +45,20 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```
    Führen Sie alternativ den Installations- und Einrichtungsprozess durch https://www.postgresql.org/download/
 
-2. Der Username ist "postgres"
-3. Das Standardpasswort ist "123456"
+2. Der Username/admin ist "postgres"
+3. Vergeben Sie das Userpasswort "123456"
 4. Öffnen Sie den Terminal
 5. Führen Sie den Befehl aus:
    ```bash
    psql -U postgres
    ```
 6. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
-7. Erstellen Sie die Datenbank:
+   
+8. Erstellen Sie die Datenbank:
    ```sql
    CREATE DATABASE examdb;
    ```
-8. Beenden Sie die Sitzung:
+9. Beenden Sie die Sitzung:
    ```sql
    \q
    ```
@@ -98,8 +99,10 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 ![Screenshot](assets/screenshots/2_csv_upload.png)
 
 ### 2. Tabelle Löschen
-0. Vorbedingung: Die Tabellenverwaltung ist ausgeklappt
-1. Klicken Sie auf den Tab "Tabelle löschen"
+0. Vorbedingung:
+   - Die Tabellenverwaltung ist ausgeklappt
+   - Es wurde eine Tabelle angelegt
+2. Klicken Sie auf den Tab "Tabelle löschen"
 3. Wählen Sie per Dropdown eine Tabelle aus
 2. Klicken Sie auf den Button "Tabelle löschen"
 5. Bestätigen Sie mit dem Button "Bestätigen"
@@ -136,7 +139,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 0. Vorbedingung:
    - Es sind Tabellen angelegt
    - Es wurden erfolgreich CSV Daten importiert
-   - Es ist eine Tabelle ausgewählt
+   - Es ist eine Tabelle über die "Tabellenverwaltung" ausgewählt
 2. Klicken Sie auf den Tab "View Data"
 3. Prüfen Sie ob Datensätze geladen sind
 

@@ -1,58 +1,94 @@
-<b>Übersicht</b>
+# Übersicht
 
-Diese Anwendung ermöglicht die Visualisierung und Verwaltung von Daten, die in einer PostgreSQL-Datenbank gespeichert sind. Sie besteht aus einer Weboberfläche (index.html), einem Backend-Skript zur Datenabfrage (getData.php), und einem Streamlit-basierten Python-Skript (test.py) zur Datenverarbeitung und -visualisierung.
+Diese Anwendung ermöglicht die Visualisierung und Verwaltung von Daten, die in einer PostgreSQL-Datenbank gespeichert sind. Sie besteht aus einer Weboberfläche (`index.html`), einem Backend-Skript zur Datenabfrage (`getData.php`), und einem Streamlit-basierten Python-Skript (`test.py`) zur Datenverarbeitung und -visualisierung.
 
-<b>Vorbedingungen</b>
+## Vorbedingungen
 
+### Systemvoraussetzungen
 
-Datenbank installieren und konfigurieren:
+- macOS oder Linux (für Windows können die Schritte leicht abweichen)
+- Terminalzugriff
+- Internetverbindung
 
-Führe folgende Schritte im Terminal aus:
+### Software installieren
+
+Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekomponenten zu installieren:
+
+1. **Homebrew installieren**  
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **PostgreSQL installieren**  
+   ```bash
+   brew install postgresql
+   ```
+
+3. **Python installieren**  
+   ```bash
+   brew install python
+   ```
+
+4. **PHP installieren**  
+   ```bash
+   brew install php
+   ```
+
+5. **pip installieren**  
+   ```bash
+   brew install python-pip
+   pip install --upgrade pip
+   ```
+
+6. **Virtuelle Umgebung erstellen**  
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+7. **requirements.txt installieren**  
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Datenbank einrichten
+
+1. Starten Sie den PostgreSQL-Dienst:
+   ```bash
+   brew services start postgresql
+   ```
+
 2. Der Username ist "postgres"
-2. Das Standardpasswort ist "123456"
-3. Öffnen Sie den Terminal
-4. psql -U postgres
-5. Geben Sie "123456" als Passwort ein und bestägigen Sie mit Enter
-6. CREATE DATABASE examdb;
-7. \q
+3. Das Standardpasswort ist "123456"
+4. Öffnen Sie den Terminal
+5. Führen Sie den Befehl aus:
+   ```bash
+   psql -U postgres
+   ```
+6. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
+7. Erstellen Sie die Datenbank:
+   ```sql
+   CREATE DATABASE examdb;
+   ```
+8. Beenden Sie die Sitzung:
+   ```sql
+   \q
+   ```
 
-1. Homebrew installieren
-Führen Sie folgende Schritte im Terminal aus:
+## Anwendung starten (`test.py`)
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-2. PostgreSQL installieren
-Führen Sie folgende Schritte im Terminal aus:
-
-brew install postgresql
-
-3. Python installieren
-Führen Sie folgende Schritte im Terminal aus:
-
-brew install python 
-
-4. PHP installieren
-Führen Sie folgende Schritte im Terminal aus:
-
-brew install php
-
-5. pip installieren
-Führen Sie folgende Schritte im Terminal aus:
-
-brew install python-pip
-pip install --upgrade pip 
-
-6. requirements.txt installieren
-Führen Sie folgende Schritte im Terminal aus:
-
-<b>Anwendung starten (test.py)</b>
-1. cd /path/to/csvManagementSystemv2
-2. pip install -r requirements.txt
-2. python3 -m venv venv
-3. source venv/bin/activate
-4. python3 -m streamlit run test.py
-
-   
+1. Navigieren Sie zum Projektverzeichnis:
+   ```bash
+   cd /path/to/csvManagementSystemv2
+   ```
+2. Aktivieren Sie die virtuelle Umgebung:
+   ```bash
+   source venv/bin/activate
+   ```
+3. Starten Sie die Anwendung:
+   ```bash
+   python3 -m streamlit run test.py
+   ```
 
 ## Funktionen des Programms
 
@@ -135,4 +171,3 @@ Führen Sie folgende Schritte im Terminal aus:
 - Optimierte SQL-Abfragen
 - Lazy Loading von großen Datensätzen
 - Effiziente Speichernutzung durch Datentyp-Optimierung
-      

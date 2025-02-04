@@ -100,6 +100,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    
 ![Screenshot](assets/screenshots/2_csv_upload.png)
 
+
+
 ### 2. Tabelle Löschen
 0. Vorbedingung:
    - Die Tabellenverwaltung ist ausgeklappt
@@ -112,6 +114,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ![Screenshot](assets/screenshots/4_tabelleLöschen.png)
 
+
+
 ### 3. Tabellen wechseln
 0. Vorbedingung:
       - Die Tabellenverwaltung ist ausgeklappt
@@ -119,6 +123,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 1. Wählen sie unter "Vorhandene Tabellen" in der Sidebar die gewünschte Tabelle aus
 
 ![Screenshot](assets/screenshots/5_tabelleWechseln.png)
+
+
 
 
 ### 4. CSV-Datei Import
@@ -134,6 +140,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 5. Laden Sie die bereitgestellte Datei aus und bestätigen Sie mit "'Dateiname' übertragen'"
 
    ![Screenshot](assets/screenshots/2.1_csv_übertragen.png)
+
+
 
 
 
@@ -159,6 +167,8 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ![Screenshot](assets/screenshots/7_datavisualization.png)
 
+
+
 ### 7. Datenvisualisierung mit Graphmanipulationen
 0. Vorbedingung:
    - Es sind Tabellen angelegt
@@ -170,11 +180,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ![Screenshot](assets/screenshots/8_datamanipulation.png)
 
+
+
 ### 8. Performance-Optimierung
 - Connection Pooling für effiziente Datenbankverbindungen
 - Caching von häufig verwendeten Daten
 - Chunk-basiertes Laden großer Datensätze
 - Automatisches Recycling von Datenbankverbindungen
+
+
 
 ### 9. Fehlerbehandlung
 - Robuste Fehlerbehandlung bei Datenbankoperationen
@@ -182,11 +196,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 - Validierung von Eingabedaten
 - Automatische Wiederherstellung bei Verbindungsabbrüchen
 
+
+
 ### 10. Benutzeroberfläche
 - Übersichtliches Streamlit Interface
 - Intuitive Navigation
 - Responsive Designanpassung
 - Fortschrittsanzeigen bei längeren Operationen
+
+
 
 ### 11. Backend-Architektur
 

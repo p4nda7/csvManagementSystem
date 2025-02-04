@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Datenvisualisierung</title>
+    
+    <!-- Preload wichtiger Ressourcen -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js" as="script">
+    
+    <!-- Optimierte CSS-Einbindung -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Defer für nicht-kritische Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+</head>
+<body>
+    <!-- Optimierte Struktur mit semantischen Elementen -->
+    <div class="container">
+        <header role="banner">
+            <h1>Datenvisualisierung</h1>
+        </header>
+        
+        <main role="main">
+            <!-- Verbesserte Formularstruktur -->
+            <form class="controls" id="chartControls">
+                <div class="control-group">
+                    <label for="tableSelect">Tabelle:</label>
+                    <select id="tableSelect" required></select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="dateSelect">Datum:</label>
+                    <input type="date" id="dateSelect" value="2024-01-24">
+                </div>
+                
+                <div class="control-group">
+                    <label for="functionSelect">Funktion:</label>
+                    <select id="functionSelect">
+                        <option value="raw">Rohdaten</option>
+                        <option value="average">Durchschnitt</option>
+                        <option value="min">Minimum</option>
+                        <option value="max">Maximum</option>
+                        <option value="sum">Summe</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="lineColor">Linienfarbe:</label>
+                    <input type="color" id="lineColor" value="#000000">
+                </div>
+                
+                <div class="control-group">
+                    <label for="lineWidth">Linienbreite:</label>
+                    <input type="range" id="lineWidth" min="1" max="10" value="2">
+                </div>
+                
+                <div class="control-group">
+                    <label for="lineStyle">Linienart:</label>
+                    <select id="lineStyle">
+                        <option value="solid">Durchgezogen</option>
+                        <option value="dashed">Gestrichelt</option>
+                        <option value="dotted">Gepunktet</option>
+                    </select>
+                </div>
+                
+                <button id="updateChart">Aktualisieren</button>
+            </form>
+
+            <section class="chart-container" aria-label="Datenvisualisierung">
+                <canvas id="dataChart"></canvas>
+            </section>
+            
+            <section class="statistics" aria-label="Statistiken">
+                <div id="statsContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script am Ende des Body für bessere Performance -->
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+<?php
+// getData.php - Separate Datei für Datenbankabfrage
+$dbParams = [
+    'host' => 'localhost',
+    'dbname' => 'myDB',
+    'user' => 'postgres',
+    'password' => '123456'
+];
+
+try {
+    $pdo = new PDO(
+        "pgsql:host={$dbParams['host']};dbname={$dbParams['dbname']}",
+        $dbParams['user'],
+        $dbParams['password']
+    );
+    
+    $stmt = $pdo->query("SELECT date, time, value FROM csv1 ORDER BY date, time");
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    header('Content-Type: application/json');
+    echo json_encode($data);
+    
+} catch (PDOException $e) {
+    header('HTTP/1.1 500 Internal Server Error');
+    echo json_encode(['error' => $e->getMessage()]);
+}
+?>

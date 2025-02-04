@@ -1,0 +1,38 @@
+# Installation auf Mac:
+# Test 5 jojo 
+# python3 -m pip install streamlit pandas sqlalchemy psycopg2-binary
+
+# System-Abhängigkeiten (via Homebrew)
+# brew install python
+# brew install postgresql
+
+# Datenverarbeitung
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Datenbank
+SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0  # Benötigt PostgreSQL
+
+# Web Interface
+streamlit>=1.30.0
+
+# Visualisierung
+plotly>=5.18.0
+
+# Datum und Zeit
+python-dateutil>=2.8.0
+
+# Zusätzliche Abhängigkeiten für Streamlit
+altair>=5.0.0
+pillow>=10.0.0
+protobuf>=4.0.0
+
+# Performance-Optimierungen
+numba>=0.58.0  # JIT-Compiler für schnellere Berechnungen
+pyarrow>=14.0.0  # Schnellere Datenverarbeitung für pandas
+
+# Entwicklungswerkzeuge
+black>=23.0.0  # Code-Formatierung
+mypy>=1.7.0  # Statische Typprüfung
+pytest>=7.4.0  # Testing 

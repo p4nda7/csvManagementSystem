@@ -94,12 +94,13 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 0. Vorbedingung:
    - Die Tabellenverwaltung ist ausgeklappt
    - Datenbank "examDB" ist eingerichtet
-   - Verbindung ist authenzifiert
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
    
-2. Klicken Sie auf den Tab "Neue Tabelle"
-3. Geben Sie im Eingabefeld den Namen der Tabelle ein
-2. Klicken Sie auf den Button "Tabelle erstellen"
-5. Wiederholen Sie diesen Vorgang 6 mal
+1. Klicken Sie auf den Tab "Neue Tabelle"
+2. Geben Sie im Eingabefeld den Namen der Tabelle ein
+3. Klicken Sie auf den Button "Tabelle erstellen"
+4. Wiederholen Sie diesen Vorgang 6 mal
    
 ![Screenshot](assets/screenshots/2_csv_upload.png)
 
@@ -109,11 +110,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 0. Vorbedingung:
    - Die Tabellenverwaltung ist ausgeklappt
    - Es wurde eine Tabelle angelegt
-2. Klicken Sie auf den Tab "Tabelle löschen"
-3. Wählen Sie per Dropdown eine Tabelle aus
-2. Klicken Sie auf den Button "Tabelle löschen"
-5. Bestätigen Sie mit dem Button "Bestätigen"
-6. Prüfen Sie ob ein grünes PopUp Fenster erscheint
+   - Datenbank "examDB" ist eingerichtet
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
+     
+1. Klicken Sie auf den Tab "Tabelle löschen"
+2. Wählen Sie per Dropdown eine Tabelle aus
+3. Klicken Sie auf den Button "Tabelle löschen"
+4. Bestätigen Sie mit dem Button "Bestätigen"
+5. Prüfen Sie ob ein grünes PopUp Fenster erscheint
 
 ![Screenshot](assets/screenshots/4_tabelleLöschen.png)
 
@@ -123,6 +128,10 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 0. Vorbedingung:
       - Die Tabellenverwaltung ist ausgeklappt
       - Es sind mehrere Tabellen angelegt
+      - Datenbankverbindung ist online
+      - Internetverbindung ist online
+      - Datenbank "examDB" ist eingerichtet
+        
 1. Wählen sie unter "Vorhandene Tabellen" in der Sidebar die gewünschte Tabelle aus
 
 ![Screenshot](assets/screenshots/5_tabelleWechseln.png)
@@ -132,15 +141,16 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ### 4. CSV-Datei Import
 0. Vorbedingung:
-   - Eine Datenbank mit dem Namen "examDB" / User: "postgres" / Passwort: "123456" ist eingerichtet
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
+   - Datenbank "examDB" ist eingerichtet
    - Die Tabellenverwaltung ist ausgeklappt
    - Die aktelle Tabelle ist unter "Vorhandene Tabellen" ausgewählt
-2. Klicken Sie auf den Tab "Upload"
-3. Klicken Sie auf den Button "Browse Files"
+1. Klicken Sie auf den Tab "Upload"
+2. Klicken Sie auf den Button "Browse Files"
    ![Screenshot](assets/screenshots/2_csv_upload.png)
 
-
-5. Laden Sie die bereitgestellte Datei aus und bestätigen Sie mit "'Dateiname' übertragen'"
+3. Laden Sie die bereitgestellte Datei aus und bestätigen Sie mit "'Dateiname' übertragen'"
 
    ![Screenshot](assets/screenshots/2.1_csv_übertragen.png)
 
@@ -151,10 +161,13 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 ### 5. Datenanalyse 
 0. Vorbedingung:
    - Es sind Tabellen angelegt
+   - Datenbank "examDB" ist eingerichtet
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
    - Es wurden erfolgreich CSV Daten importiert
    - Es ist eine Tabelle über die "Tabellenverwaltung" ausgewählt
-2. Klicken Sie auf den Tab "View Data"
-3. Prüfen Sie ob Datensätze geladen sind
+1. Klicken Sie auf den Tab "View Data"
+2. Prüfen Sie ob Datensätze geladen sind
 
 ![Screenshot](assets/screenshots/6_viewData.png)
 
@@ -162,11 +175,15 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 ### 6. Datenvisualisierung
 0. Vorbedingung:
    - Es sind Tabellen angelegt
+   - Datenbank "examDB" ist eingerichtet
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
    - Es wurden erfolgreich CSV Daten importiert
    - Eine oder mehrere Tabelle sind ausgewählt
    - Es wurde das korrekte Start und Enddatum ausgewählt
-2. Klicken Sie auf den Tab "Diagram Multi"
-3. Prüfen Sie ob Datensätze geladen sind
+     
+1. Klicken Sie auf den Tab "Diagram Multi"
+2. Prüfen Sie ob Datensätze geladen sind
 
 ![Screenshot](assets/screenshots/7_datavisualization.png)
 
@@ -174,12 +191,16 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ### 7. Datenvisualisierung mit Graphmanipulationen
 0. Vorbedingung:
-   - Es sind Tabellen angelegt
+    - Es sind Tabellen angelegt
+   - Datenbank "examDB" ist eingerichtet
+   - Datenbankverbindung ist online
+   - Internetverbindung ist online
    - Es wurden erfolgreich CSV Daten importiert
    - Eine oder mehrere Tabelle sind ausgewählt
    - Es wurde das korrekte Start und Enddatum ausgewählt
-2. Öffnen Sie den Tab "Visualisierungsoptionen"
-3. Prüfen Sie die Registeroptionen "Grundeinstellungen", "Statistische Anzeigen", "Erweiterte Analysen "sich öffnen
+     
+1. Öffnen Sie den Tab "Visualisierungsoptionen"
+2. Prüfen Sie die Registeroptionen "Grundeinstellungen", "Statistische Anzeigen", "Erweiterte Analysen "sich öffnen
 
 ![Screenshot](assets/screenshots/8_datamanipulation.png)
 

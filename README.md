@@ -91,8 +91,12 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 ## Funktionen des Programms
 
 ### 1. Tabelle Erstellen
-0. Vorbedingung: Die Tabellenverwaltung ist ausgeklappt
-1. Klicken Sie auf den Tab "Neue Tabelle"
+0. Vorbedingung:
+   - Die Tabellenverwaltung ist ausgeklappt
+   - Datenbank "examDB" ist eingerichtet
+   - Verbindung ist authenzifiert
+   
+2. Klicken Sie auf den Tab "Neue Tabelle"
 3. Geben Sie im Eingabefeld den Namen der Tabelle ein
 2. Klicken Sie auf den Button "Tabelle erstellen"
 5. Wiederholen Sie diesen Vorgang 6 mal

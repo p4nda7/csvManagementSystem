@@ -43,7 +43,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 1. Starten Sie den PostgreSQL-Dienst:
    ```bash
-   brew services start postgresql
+   brew services start postgresql@17
    ```
    Führen Sie alternativ den Installations- und Einrichtungsprozess durch https://www.postgresql.org/download/
 

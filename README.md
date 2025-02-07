@@ -50,11 +50,13 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 2. Der Username/admin ist "postgres"
 3. Vergeben Sie das Userpasswort "123456"
 4. Öffnen Sie den Terminal
-5. Verbinden Sie sich mit der Datenbank
+5. Verbinden Sie sich mit der Datenbank mit der Portnummer 5432
    ```bash
-   psql -U postgres
+   psql -U postgres -d examdb -h localhost -p 5432
    ```
-6. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
+   Port belegt? Benutzen Sie einen anderen Port und passen Sie die test.py Zeile 18 an.
+   
+7. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
    
 8. Erstellen Sie die Datenbank:
    ```sql

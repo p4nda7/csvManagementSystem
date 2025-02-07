@@ -191,69 +191,88 @@ def format_preview_data(df, stats, date_range):
         st.error(f"Fehler bei der Formatierung der Vorschau: {str(e)}")
 
 def search_data_points(engine, table_name: str, search_params: dict) -> pd.DataFrame:
-    """Sucht spezifische Datenpunkte in der Datenbank mit verbesserter Formatierung"""
+    """Sucht spezifische Datenpunkte in der examDB und bereitet sie für die Visualisierung auf"""
     try:
         conditions = []
         params = {}
         
-        # Index-Suche hinzufügen
+        # Index-Suche angepasst an die examDB-Struktur
         if search_params.get('index'):
-            conditions.append("index = :search_index")
-            params['search_index'] = search_params['index']
-        
-        # Bestehende Bedingungen...
-        if search_params.get('date'):
-            conditions.append("date::date = :search_date")
-            params['search_date'] = search_params['date']
-        
-        if search_params.get('time'):
+            # Konvertiere den Index-Wert in einen Integer
             try:
-                time_str = search_params['time']
-                if len(time_str.split(':')) == 2:
-                    time_str += ':00'
-                conditions.append("time::time = :search_time")
-                params['search_time'] = time_str
-            except Exception as e:
-                st.error(f"Ungültiges Zeitformat. Bitte verwenden Sie HH:MM:SS: {str(e)}")
+                index_value = int(search_params['index'])
+                conditions.append("CAST(index AS integer) = :search_index")
+                params['search_index'] = index_value
+            except ValueError:
+                st.error("Der Index muss eine ganze Zahl sein")
                 return pd.DataFrame()
+        
+        # Zeit-basierte Suche
+        if search_params.get('date') or search_params.get('time'):
+            if search_params.get('date'):
+                conditions.append("date = :search_date")
+                params['search_date'] = search_params['date']
+                
+            if search_params.get('time'):
+                try:
+                    time_str = search_params['time']
+                    if len(time_str.split(':')) == 2:
+                        time_str += ':00'
+                    conditions.append("time = :search_time")
+                    params['search_time'] = time_str
+                except Exception as e:
+                    st.error(f"Ungültiges Zeitformat. Bitte verwenden Sie HH:MM:SS: {str(e)}")
+                    return pd.DataFrame()
         
         if search_params.get('value') is not None:
             try:
-                value = round(float(search_params['value']), 6)
-                conditions.append("ABS(value::float - :search_value) < 1e-6")
+                value = float(search_params['value'])
+                conditions.append("value::numeric = :search_value")
                 params['search_value'] = value
             except ValueError:
-                st.error("Ungültiges Zahlenformat für den Suchwert")
+                st.error("Ungültiger Wert für die Suche")
                 return pd.DataFrame()
-        
+
+        # Erstelle WHERE-Klausel
         where_clause = " AND ".join(conditions) if conditions else "TRUE"
         
-        # Index in die Abfrage aufnehmen
+        # Query angepasst an die examDB-Struktur
         query = f"""
-            SELECT 
-                index,
-                date::date as date,
-                time::time as time,
-                value::float as value
+            SELECT DISTINCT
+                CAST(index AS integer) as index,
+                date,
+                time,
+                value::numeric as value
             FROM {table_name}
             WHERE {where_clause}
-            ORDER BY date, time
+            ORDER BY date, time, index
+            LIMIT 1000
         """
         
         with engine.connect() as conn:
+            # Debug-Ausgabe vor der Ausführung
+            st.write("Debug - SQL Query:", query)
+            st.write("Debug - Parameter:", params)
+            
             df = pd.read_sql_query(text(query), conn, params=params)
             
             if df.empty:
                 st.info("Keine Datenpunkte gefunden.")
             else:
-                df['value'] = df['value'].round(6)
-                df['time'] = df['time'].apply(lambda x: x.strftime('%H:%M:%S'))
-                df['date'] = df['date'].apply(lambda x: x.strftime('%Y-%m-%d'))
+                st.success(f"{len(df)} Datenpunkte gefunden")
+                # Formatierung der Ergebnisse
+                df['value'] = pd.to_numeric(df['value'], errors='coerce').round(6)
+                
+                # Konvertiere date und time für die Anzeige
+                df['date'] = pd.to_datetime(df['date']).dt.strftime('%Y-%m-%d')
+                df['time'] = pd.to_datetime(df['time'], format='%H:%M:%S').dt.strftime('%H:%M:%S')
             
             return df
             
     except Exception as e:
-        st.error(f"Fehler bei der Suche: {str(e)}")
+        st.error(f"Fehler bei der Datenbankabfrage: {str(e)}")
+        st.error(f"Query: {query}")
+        st.error(f"Parameter: {params}")
         return pd.DataFrame()
 
 def create_visualization(df, selected_table, options=None, search_results=None):
@@ -282,21 +301,33 @@ def create_visualization(df, selected_table, options=None, search_results=None):
         # Erstelle Grundvisualisierung
         fig = go.Figure()
 
+        # Hover-Template basierend auf Verfügbarkeit des Index
+        hover_template = (
+            "<b>Messpunkt</b>" +
+            (" auf Index %{customdata}" if 'index' in plot_df.columns else "") +
+            "<br><br>" +
+            "Datum: %{x|%Y-%m-%d}<br>" +
+            "Zeit: %{x|%H:%M:%S}<br>" +
+            "Wert: %{y:.6f}<br>" +
+            "<extra></extra>"
+        )
+
         # Füge Datenpunkte hinzu
-        fig.add_trace(go.Scatter(
-            x=plot_df['datetime'],
-            y=plot_df['value'],
-                mode=options['line_type'],
-            name='Messwerte',
-            line=dict(
-                width=options['line_width'],
-                color='#1f77b4'
-            ),
-            marker=dict(
-                size=options['point_size'],
-                color='#1f77b4'
-            )
-        ))
+        scatter_args = {
+            'x': plot_df['datetime'],
+            'y': plot_df['value'],
+            'mode': options['line_type'],
+            'name': 'Messwerte',
+            'line': dict(width=options['line_width'], color='#1f77b4'),
+            'marker': dict(size=options['point_size'], color='#1f77b4'),
+            'hovertemplate': hover_template
+        }
+        
+        # Füge customdata nur hinzu, wenn Index vorhanden ist
+        if 'index' in plot_df.columns:
+            scatter_args['customdata'] = plot_df['index']
+
+        fig.add_trace(go.Scatter(**scatter_args))
 
         # Suchresultate mit Index im Hover
         if search_results is not None and not search_results.empty:
@@ -305,25 +336,36 @@ def create_visualization(df, selected_table, options=None, search_results=None):
                 search_df['date'].astype(str) + ' ' + search_df['time'].astype(str)
             )
             
-            fig.add_trace(go.Scatter(
-                x=search_df['datetime'],
-                y=search_df['value'],
-                    mode='markers',
-                name='Gefundene Punkte',
-                    marker=dict(
-                        symbol='star',
-                        size=15,
+            # Hover-Template für Suchresultate
+            search_hover_template = (
+                "<b>Gefundener Punkt</b>" +
+                (" auf Index %{customdata}" if 'index' in search_df.columns else "") +
+                "<br><br>" +
+                "Datum: %{x|%Y-%m-%d}<br>" +
+                "Zeit: %{x|%H:%M:%S}<br>" +
+                "Wert: %{y:.6f}<br>" +
+                "<extra></extra>"
+            )
+            
+            search_scatter_args = {
+                'x': search_df['datetime'],
+                'y': search_df['value'],
+                'mode': 'markers',
+                'name': 'Gefundene Punkte',
+                'marker': dict(
+                    symbol='star',
+                    size=15,
                     color='red',
                     line=dict(color='black', width=1)
                 ),
-                hovertemplate="<b>Gefundene Punkte:</b><br>" +
-                            "Index: %{customdata}<br>" +  # Index anzeigen
-                            "Datum: %{x|%Y-%m-%d}<br>" +
-                            "Zeit: %{x|%H:%M:%S}<br>" +
-                            "Wert: %{y:.6f}<br>" +
-                            "<extra></extra>",
-                customdata=search_df['index']  # Index für Hover bereitstellen
-            ))
+                'hovertemplate': search_hover_template
+            }
+            
+            # Füge customdata nur hinzu, wenn Index vorhanden ist
+            if 'index' in search_df.columns:
+                search_scatter_args['customdata'] = search_df['index']
+            
+            fig.add_trace(go.Scatter(**search_scatter_args))
 
         # Layout-Konfiguration mit Legende unter dem Titel
         fig.update_layout(

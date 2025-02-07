@@ -38,6 +38,10 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```bash
    brew install php
    ```
+5. **Pip installieren**  
+   ```bash
+   python3 -m pip install --upgrade pip
+   ```
 
 ### Datenbank einrichten
 
@@ -49,15 +53,20 @@ Führen Sie folgende Schritte im Terminal aus
    ```
    Führen Sie alternativ den Installations- und Einrichtungsprozess durch https://www.postgresql.org/download/
 
-2. Erstellen Sie einen Nutzer in der Datenbank
+2. Melden Sie sich an
    ```bash
-   CREATE USER postgres WITH PASSWORD '123456';
+   psql -U $(whoami) -d postgres
+   ```
+
+3. Erstellen Sie einen Nutzer in der Datenbank
+   ```bash
+   CREATE ROLE postgres WITH LOGIN SUPERUSER PASSWORD '123456';
    ```
    
-5. Verbinden Sie sich mit der Datenbank
+5. Verbinden Sie sich mit der Datenbank als Benutzer
    
    ```bash
-   psql -U postgres
+   psql -U postgres -d postgres
    ```
    
 7. Geben das Passwort ein und bestätigen Sie mit Enter

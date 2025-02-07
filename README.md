@@ -41,7 +41,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ### Datenbank einrichten
 
-Führen Sie folgendes im Terminal aus
+Führen Sie folgende Schritte im Terminal aus
 
 1. Starten Sie den PostgreSQL-Dienst:
    ```bash
@@ -60,13 +60,18 @@ Führen Sie folgendes im Terminal aus
    psql -U postgres
    ```
    
-7. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
+7. Geben das Passwort ein und bestätigen Sie mit Enter
+
+  ```bash
+  123456
+   ```
    
-8. Erstellen Sie die Datenbank:
+9. Erstellen Sie die Datenbank:
+
    ```sql
    CREATE DATABASE examdb;
    ```
-9. Beenden Sie die Sitzung:
+10. Beenden Sie die Sitzung:
    ```sql
    \q
    ```

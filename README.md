@@ -26,7 +26,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 2. **PostgreSQL installieren**  
    ```bash
-   brew install postgresql
+   brew reinstall postgresql@17
    ```
 
 3. **Python installieren**  

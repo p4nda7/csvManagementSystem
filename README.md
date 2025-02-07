@@ -26,7 +26,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 2. **PostgreSQL installieren**  
    ```bash
-   brew reinstall postgresql@17
+   brew install postgresql@17
    ```
 
 3. **Python installieren**  
@@ -41,20 +41,24 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
 
 ### Datenbank einrichten
 
+Führen Sie folgendes im Terminal aus
+
 1. Starten Sie den PostgreSQL-Dienst:
    ```bash
    brew services start postgresql@17
    ```
    Führen Sie alternativ den Installations- und Einrichtungsprozess durch https://www.postgresql.org/download/
 
-2. Der Username/admin ist "postgres"
-3. Vergeben Sie das Userpasswort "123456"
-4. Öffnen Sie den Terminal
-5. Verbinden Sie sich mit der Datenbank mit der Portnummer 5432
+2. Erstellen Sie einen Nutzer in der Datenbank
    ```bash
-   psql -U postgres -d examdb -h localhost -p 5432
+   CREATE USER postgres WITH PASSWORD '123456';
    ```
-   Port belegt? Benutzen Sie einen anderen Port und passen Sie die test.py Zeile 18 an.
+   
+5. Verbinden Sie sich mit der Datenbank
+   
+   ```bash
+   psql -U postgres
+   ```
    
 7. Geben Sie "123456" als Passwort ein und bestätigen Sie mit Enter
    

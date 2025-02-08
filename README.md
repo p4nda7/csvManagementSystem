@@ -40,6 +40,7 @@ Führen Sie folgende Schritte im Terminal aus, um alle notwendigen Softwarekompo
    ```
 5. **Pip installieren**  
    ```bash
+   pip install --upgrade pip
    python3 -m pip install --upgrade pip
    ```
 
@@ -94,9 +95,7 @@ Führen Sie folgende Schritte im Terminal aus
 2. Erstellen und Aktivieren Sie die virtuelle Umgebung:
    ```bash
     python3 -m venv path/to/venv
-    source path/to/venv/bin/activate
-    pip install --upgrade pip
-   
+    source path/to/venv/bin/activate   
    ```
 3. Installieren Sie die Bibliotheken:
    ```bash

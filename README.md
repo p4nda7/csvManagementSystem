@@ -113,7 +113,7 @@ Führen Sie folgende Schritte im Terminal aus
 0. Vorbedingung:
    - Die Tabellenverwaltung ist ausgeklappt
    - Datenbank "examDB" ist eingerichtet
-   - Datenbankverbindung ist online
+   - Datenbankverbindung auf Port 5432 ist online
    - Internetverbindung ist online
    
 1. Klicken Sie auf den Tab "Neue Tabelle"
@@ -128,10 +128,10 @@ Führen Sie folgende Schritte im Terminal aus
 ### 2. Tabelle Löschen
 0. Vorbedingung:
    - Die Tabellenverwaltung ist ausgeklappt
-   - Es wurde eine Tabelle angelegt
    - Datenbank "examDB" ist eingerichtet
-   - Datenbankverbindung ist online
+   - Datenbankverbindung auf Port 5432 ist online
    - Internetverbindung ist online
+   - Mindestens eine Tabelle ist angelegt
      
 1. Klicken Sie auf den Tab "Tabelle löschen"
 2. Wählen Sie per Dropdown eine Tabelle aus
@@ -146,10 +146,10 @@ Führen Sie folgende Schritte im Terminal aus
 ### 3. Tabellen wechseln
 0. Vorbedingung:
       - Die Tabellenverwaltung ist ausgeklappt
-      - Es sind mehrere Tabellen angelegt
-      - Datenbankverbindung ist online
-      - Internetverbindung ist online
       - Datenbank "examDB" ist eingerichtet
+      - Datenbankverbindung auf Port 5432 ist online
+      - Internetverbindung ist online
+      - Es sind mehrere Tabellen angelegt
         
 1. Wählen sie unter "Vorhandene Tabellen" in der Sidebar die gewünschte Tabelle aus
 

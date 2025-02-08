@@ -70,7 +70,7 @@ Führen Sie folgende Schritte im Terminal aus
    psql -U postgres -d postgres
    ```
    
-7. Geben das Passwort ein und bestätigen Sie mit Enter
+(7. Geben das Passwort ein und bestätigen Sie mit Enter)
 
   ```bash
   123456
